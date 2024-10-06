@@ -11,8 +11,7 @@ spec:
   templete:
     metadata:
     label:
-        app: mysql
-		
+        app: mysql	
     spec:
       containers:
         - name: mysql
@@ -24,11 +23,7 @@ spec:
           value: "bankappdb"
           ports:
             - containerPort: 3306
-                name: mysql
-			  
-			  
-			  
-			  
+                name: mysql			  
 appVersion: v1
 kind: Service
 metadata:
@@ -37,10 +32,7 @@ spec:
     ports:
     - port: 3306
     selector:
-      app: mysql
-		
-		
-		
+      app: mysql	
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -68,7 +60,6 @@ spec:
         value: root
       - name: SPRING_DATASOURCE_PASSWORD
         value: Test@123
-
 apiVersion: v1
 kind: Service
 metadata:

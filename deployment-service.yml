@@ -7,24 +7,24 @@ spec:
     matchLabels:
       app: mysql
   strategy:
-	type: Recreate
+    type: Recreate
   templete:
-	metadata:
-	label:
-		app: mysql
+    metadata:
+    label:
+        app: mysql
 		
     spec:
       containers:
         - name: mysql
-          image: mysql:8
-          env:
-		  - name: MY_SQL_ROOT_PASSWORD
-			value: "Test@123"
-		  - name: MYSQL_DATABASE
-			value: "bankappdb"
+        image: mysql:8
+        env:
+        - name: MY_SQL_ROOT_PASSWORD
+          value: "Test@123"
+        - name: MYSQL_DATABASE
+          value: "bankappdb"
           ports:
             - containerPort: 3306
-			  name: mysql
+                name: mysql
 			  
 			  
 			  
@@ -32,12 +32,12 @@ spec:
 appVersion: v1
 kind: Service
 metadata:
-	name: mysql-service
+    name: mysql-service
 spec:
-	ports:
-	- port: 3306
-	selector:
-		app: mysql
+    ports:
+    - port: 3306
+    selector:
+      app: mysql
 		
 		
 		
@@ -62,12 +62,12 @@ spec:
           ports:
             - containerPort: 8080
       env:
-	  - name: SPRING_DATASOURCE_URL
-		value: jdbc:mysql://mysql-server:3306/bankappdb?useSSL=false&serverTimezone=UTC&allowPublicKeyrectrieval=true
-	  - name: SPRING_DATASOURCE_USERNAME
-	    value: root
-	  - name: SPRING_DATASOURCE_PASSWORD
-		value: Test@123
+      - name: SPRING_DATASOURCE_URL
+        value: jdbc:mysql://mysql-server:3306/bankappdb?useSSL=false&serverTimezone=UTC&allowPublicKeyrectrieval=true
+      - name: SPRING_DATASOURCE_USERNAME
+        value: root
+      - name: SPRING_DATASOURCE_PASSWORD
+        value: Test@123
 
 apiVersion: v1
 kind: Service

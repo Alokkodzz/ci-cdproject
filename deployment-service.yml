@@ -54,8 +54,8 @@ spec:
         app: bankapp
     spec:
       containers:
-      - name: blogingapp
-        image: alokkodzz/blogingapp:latest
+      - name: bankapp
+        image: alokkodzz/bankapp:latest
         ports:
         - containerPort: 8080
         env:

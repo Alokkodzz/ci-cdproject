@@ -63,7 +63,7 @@ spec:
             - containerPort: 8080
       env:
 	  - name: SPRING_DATASOURCE_URL
-		value: jdbc:mysql://mysql-server:3306/bankapppdb?useSSL=false&serverTimezone=UTC&allowPublicKeyrectrieval=true
+		value: jdbc:mysql://mysql-server:3306/bankappdb?useSSL=false&serverTimezone=UTC&allowPublicKeyrectrieval=true
 	  - name: SPRING_DATASOURCE_USERNAME
 	    value: root
 	  - name: SPRING_DATASOURCE_PASSWORD
